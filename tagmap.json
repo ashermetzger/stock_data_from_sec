@@ -1,0 +1,682 @@
+[
+    {
+        "keytag": "2",
+        "tags": [
+            "Revenue",
+            "Revenues",
+            "Sales",
+            "NetSales",
+            "NetSalesRevenue",
+            "TotalSales",
+            "RevenueFromContractsWithCustomers",
+	    "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "RevenueFromContractWithCustomerIncludingAssessedTax",
+            "SalesRevenueGross",
+            "SalesRevenueNet",
+            "SalesRevenuesNet",
+            "ProductAndOtherSales",
+            "ProductSales",
+            "Productsalesandother",
+            "Productsalesandservicerevenue",
+            "ProductSalesNet",
+            "ProductSalesRevenue",
+            "RevenueFromGrossSales",
+            "SalesOfGoods",
+            "SalesRevenueNet",
+            "RevenueFromSaleOfGoods",
+            "RevenueFromRenderingOfServices",
+            "SalesRevenueGoodsNet",
+            "SalesRevenueServicesNet",
+            "SalesRevenueGoodsNet",
+            "SalesRevenueGoodsGross",
+            "ContractsRevenue",
+            "FeeAndCommissionIncome",
+            "RevenueFromRelatedParties",
+            "RegulatedAndUnregulatedOperatingRevenue",
+            "CollaborationRevenue",
+            "LicenseAndServicesRevenue",
+            "TotalInvestmentIncome",
+            "InsuranceCommissionsAndFees",
+            "FeesAndCommissions",
+            "ManagementFeesRevenue",
+            "LicensesRevenue",
+            "ProductRevenue",
+            "ServiceCharges",
+            "ServiceChargesAndFees",
+            "TechnologyServicesRevenue",
+            "ServiceRevenue",
+            "ProfessionalFees",
+            "ProfessionalServicesRevenue",
+            "RentalRevenues",
+            "InterestIncomeOperating",
+            "InvestmentIncomeNet",
+            "InterestIncome",
+            "FinanceIncome",
+            "InterestIncomeNonoperating",
+            "InvestmentIncome",
+            "NetInvestmentIncome",
+            "GrossInvestmentIncomeOperating",
+            "RoyaltyRevenue",
+            "FinancialServicesRevenue",
+            "RentalIncome"
+        ]
+    },
+
+
+    
+    {
+        "keytag": "88",
+        "tags": [
+	    "LeaseLiability",
+	    "LeaseLiabilityCurrent",
+	    "LeaseLiabilityNonCurrent",
+	    "OperatingLeaseLiabilityCurrent",
+	    "OperatingLeaseLiabilityNonCurrent"
+	    	]
+    },
+    {
+        "keytag": "70",
+        "tags": [
+	    "Acquisitions",
+	    "PaymentsToAcquireBusinesses",
+	    "PaymentsToAcquireBusinessesNetOfCashAcquired"
+	    	]
+    },
+    {
+        "keytag": "28",
+        "tags": [
+	    "Repurchase",
+	    "RepurchaseOfCommonStock",
+	    "PaymentsForRepurchaseOfCommonStock"
+	    	]
+    },
+    {
+        "keytag": "34",
+        "tags": [
+	    "Issuance",
+	    "IssuanceOfCommonStock",
+	    "ProceedsFromIssuanceOfCommonStock"
+	    	]
+    },
+    {
+        "keytag": "17",
+        "tags": [
+	    "DPS",
+	    "CommonStockDividendsPerShareDeclared",
+	    "StockDividendsPerShareDeclared",
+	    "DividendsPerShareDeclared"
+	    	]
+    },
+    {
+        "keytag": "79",
+        "tags": [
+	    "OperatingExpense",
+	    "OperatingCostsAndExpenses",
+	    "OperatingExpenses"
+	]
+    },
+
+    {
+        "keytag": "78",
+        "tags": [
+	    "AGM",
+	    "SellingGeneralAndAdministrativeExpense",
+	    "SellingAndMarketingExpense",
+	    "GeneralAndAdministrativeExpense"
+	]
+    },
+
+    {
+        "keytag": "53",
+        "tags": [
+	    "Interest",
+	    "InterestExpense"
+	]
+    },
+
+    {
+        "keytag": "77",
+        "tags": [
+	    "GrossProfit",
+	    "GrossProfitAfterFairValueAdjustments",
+	    "GrossProfitBeforeFairValueAdjustments",
+	    "GrossProfitBeforeRealizedUnrealizedGrossProfitOnSalesToAssociates",
+	    "GrossProfitExcludingDepreciation",
+            "GrossProfitExcludingFairValueItems"
+	]
+    },
+
+
+
+    
+    {
+        "keytag": "76",
+        "tags": [
+	    "COGS",
+	    "CostOfGoodsAndService",
+	    "CostOfSales",
+	    "CostOfRevenue",
+	    "CostsAndExpenses",
+	    "CostOfGoodsAndServices",
+	    "CostOfGoodsAndServicesSold",
+	    "CostOfGoodsAndServiceExcludingDepreciationDepletionAndAmortization"
+	]
+    },
+
+
+    {
+        "keytag": "5",
+        "tags": [
+	    "Depreciation",
+	    "TotalDepreciation"
+	]
+    },
+
+
+    {
+        "keytag": "41",
+        "tags": [
+	    "DAI",
+	    "DepreciationAndAmortization",
+	    "DepreciationDepletionAndAmortization"
+	]
+    },
+
+    {
+        "keytag": "6",
+        "tags": [
+	    "Amortization",
+	    "AmortizationOfIntangibleAssets"
+	]
+    },
+
+    
+    {
+        "keytag": "68",
+        "tags": [
+	    "ProfitLossBeforeTax",
+	    "IncomeLossBeforeIncomeTaxes",
+	    "IncomeLossBeforeIncomeTax",
+	    "IncomeLossFromContinuingOperationsBeforeIncomeTaxesMinorityInterestAndIncomeLossFromEquityMethodInvestments",
+	    "IncomeLossFromContinuingOperationsBeforeIncomeTaxes",
+	    "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+"IncomeLossFromContinuingOperationsBeforeIncomeTaxesAndMinorityInterest"
+	]
+    },
+
+	    {
+        "keytag": "21",
+        "tags": [
+"NetProfit",
+"NetIncomeLoss",
+"NetIncome",
+"ProfitLossFromContinuingOperations",
+"ProfitLoss",
+	    "IncomeLossFromContinuingOperations",
+"NetIncomeLossAvailableToCommonStockholdersBasic",
+	    "ProFormaNetIncomeLoss",
+	    "NetIncomeLossAttributableToReportingEntity",
+	    "IncomeLossFromContinuingOperationsIncludingPortionAttributableToNoncontrollingInterest",
+"NetIncomeLossBeforeProfitShare",
+"NetIncomeLossEquityStatement",
+"IncomeLossfromContinuingOperationsbeforeEquityMethodInvestmentsExtraordinaryItemsNoncontrollingInterest",
+"NetIncomeEquity",
+"NetIncomeIncludingPortionAttributableToNonredeemableNonControllingInterest",
+"NetIncomeLossAttributableToParentAfterAcquisition",
+"NetIncomeLossAttributableToParentExcludingPredecessor",
+"NetIncomeLossAvailableToCommonStockholdersDiluted",
+"NetIncomeLossExcludingPortionAttributableToRedeemableNoncontrolIingInterest",
+"NetIncomeLossIncludingNoncontrollingInterest",
+"NetIncomeLossIncludingPortionAttributabletoNoncontrollingInterestExcludingPortionAttributabletoTemporaryEquity",
+"NetIncomeLossincludingPortionAttributabletoNoncontrollingInterestExcludingPreferredStockDividend",
+"NetIncomeLossAfterChangeInPartnership",
+"NetIncomeLossExcludingRedeemableNoncontrollingInterestsNetIncomeLoss",
+"NetIncomeLossAvailableToCommonStockholdersBasic",
+"NetIncomeLossAttributableToNoncontrollingInterest",
+"IncomeLossFromContinuingOperations",
+"IncomeLossAttributableToParent",
+"NetIncomeLossShareholderInterest",
+"IncomeLossIncludingPortionAttributableToNoncontrollingInterest",
+"NetIncomeLossAttributableToRedeemableNoncontrollingInterest",
+"ProfitLossExcludingRedeemableNoncontrollingInterests",
+"IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+"NetIncomeLossExcludingRedeemableNoncontrollingInterests",
+"NetIncomeLossExcludingRedeemableNoncontrollingInterest",
+"NetIncomeLossIncludingNoncontrollingInterestInConsolidatedSubsidiaries",
+"ProfitLossExcludingNetIncomeLossAttributableToRedeemableNoncontrollingInterests",
+"NetIncomeLossAttributableToNonredeemableNoncontrollingInterest",
+"NetIncomeLossIncludingPortionAttributableToRedeemableNoncontrollingInterest",
+"ProfitLossLessMinorityInterestInNetIncomeLossOperatingPartnerships",
+"ProfitLossExcludingPortionAttributableToRedeemableNoncontrollingInterest",
+"IncomeLossFromContinuingOperationsBeforeIncomeTaxesAndRedeemableNonControllingInterest"
+	]
+    },
+
+
+
+    
+
+
+    {
+        "keytag": "72",
+        "tags": [
+"Goodwill",
+"GoodwillGross",
+"Goodwill1",
+"GoodwillBalance",
+"GoodwillImpairmentLoss",
+"Goodwillfromacquisition",
+"AcquisitionOfGoodwill",
+"GoodwillNetOfCashAcquired",
+"GoodwillNet",
+"Goodwills",
+"Goodwill3",
+"GoodwillCompac",
+"GoodwillFairValueDisclosure",
+"GoodwillNonCash",
+"GoodwillNonCashFinancing",
+"Goodswill",
+"Goodwilles",
+"GoodwillIncludingBankruptcyReorganization",
+"NonCashGoodwillAcquiredInAcquisition",
+"GoodwillExcludingDiscontinuedOperations",
+"NoncashOrPartNoncashAcquisitionGoodwillAcquired",
+"SupplementalDisclosuresOfNonCashInvestingAndFinancingActivitiesGoodwill",
+"NoncashOrPartNoncashAcquisitionGoodwillRecognized",
+"GoodwillAndOtherIntangibleAssets",
+"GoodwillAndOtherIntangibleAssetsNoncurrent",
+	    "Goodwillanddevelopedtechnologynet",
+	    "FiniteLivedIntangibleAssetsNet",
+"GoodwillIncludingAmountsForOtherIntangibleAssets"
+	]
+    },
+
+ {
+        "keytag": "4",
+        "tags": [
+"CapitalExpenditure",
+"NetCapitalExpenditure",
+"CapitalExpenditures",
+"NetCapitalExpenditures",
+	    "CashOuflowFromCapitalExpenditureForPlantAndEquipmentAndIntangibleAssets",
+	    "PaymentsToAcquirePropertyPlantAndEquipment",
+	    "PaymentsForCapitalImprovements",    
+	    "PaymentsForCapitalImprovementsInProcess",    
+	    "PaymentsForCapitalImprovementsAndConstructionInProcess",    
+	    "CapitalExpenditureInvestmentProperty",
+	    "CapitalExpenditureOnInvestmentProperty",
+	    "CashOutflowFromCapitalExpenditureForInvestments",
+	    "CashOutflowFromCapitalExpenditureForCurrentInvestments",
+	    "CapitalExpendituresOnInvestmentProperties",
+"PaymentsToAcquireProductiveAssets",
+"PaymentsForCapitalImprovements",
+"PaymentsForProceedsFromProductiveAssets",
+"PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities",
+"PaymentsToAcquireMachineryAndEquipment",
+"PaymentstoAcquireProductiveAssetsincludingdiscontinuedoperations",
+"PaymentsForCapitalExpenditures",
+"CapitalExpendituresNet",
+"AccruedCapitalExpendituresCurrent",
+"PaymentsToAcquirePropertyPlantEquipmentAndAcquiredSoftware"
+	]
+    },
+
+    {
+        "keytag": "37",
+        "tags": [
+	    "LiabilitiesNoncurrent",
+	    "LiabilitiesNonCurrent",
+	    "NoncurrentLiabilities",
+	    "NonCurrentLiabilities",
+	    "DebtNonCurrent",
+	    "LongTermDebtNoncurrent",
+	    "LiabilitiesNonCurrent"
+	]
+    },
+
+    {
+        "keytag": "39",
+        "tags": [
+"AssetsNonCurrent",
+"AssetsNoncurrent",
+	    "NonCurrentAssets",
+	    "NoncurrentAssets",
+	    "LongTermAssets"
+	]
+    },
+
+    {
+        "keytag": "38",
+        "tags": [
+	    "InterestBearingLiabilities",
+	    "LiabilitiesInterestBearing",
+	    "InterestBearingDepositLiabilities",
+	    "InterestBearingDepositLiabilitiesDomestic",
+	    "InterestBearingDepositLiabilities",
+	    "InterestBearingDepositLiabilitiesForeign",
+	    "InterestBearingLoansAndBorrowings", 
+	    "InterestBearingDepositLiabilitiesExcludingTimeDeposits",
+	    "LongTermBorrowingsInterestBearing",
+	    "LongTermDebtAndCapitalLeaseObligations",
+	    "LongTermDebtCurrent",
+	    "BorrowingsInterestBearing", 
+	    "LongTermBorrowingsInterestBearing", 
+	    "ShortTermBorrowingsInterestBearing", 
+	    "LongTermDebtNoncurrent",
+	    "NonCurrentLiabilities",
+	    "LiabilitiesNonCurrent",
+	    "LongTermNotesPayable",
+	    "FinancialLiabilitiesAtAmortisedCost",
+	    "DepositsFromBanks",
+	    "LiabilitiesDueToCentralBanks",
+	    "Debt",
+	    "BankDebt",
+	    "OperatingLeaseLiabilityNoncurrent",
+	    "OtherLiabilitiesNoncurrent",
+	    "LeaseLiabilities",
+	    "Liabilities"
+	]
+    },
+
+	
+    {
+        "keytag": "35",
+        "tags": [
+"CurrentAssets",
+"AssetsCurrent",
+"CurrentAssetsOtherThanAssetsOrDisposalGroupsClassifiedAsHeldForSaleOrAsHeldForDistributionToOwners",
+"TotalCurrentAssets",
+"AssetsCurrentAttributableToContinuingOperations",
+	  "TotalCurrentAssets1",
+	    "AssetsCurrent",
+	    "CashAndDueFromBanks",
+	                "Cash",
+            "CashAndCashEquivalents",
+            "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "CashAndCashEquivalentsAtCarryingValue",
+            "CashAndBankBalancesAtCentralBanks",
+            "CashCashEquivalentsAndRestricedCash",
+            "CaissesEtBanquesCentrales",
+            "CashEquivalentsAtCarryingValue",
+            "CashAndCashEquivalents",
+            "CashAndCashEquivalentsAtCarryingValue",
+            "RestrictedCashAndCashEquivalents",
+            "CashCashEquivalentsAndShortTermInvestments",
+            "RestrictedCashAndCashEquivalentsAtCarryingValue",
+            "CashAndCashEquivalentsFairValueDisclosure"
+
+
+	]
+    },
+    {
+        "keytag": "36",
+        "tags": [
+"CurrentLiabilities",
+"LiabilitiesCurrent",
+"CurrentLiabilitiesOtherThanLiabilitiesIncludedInDisposalGroupsClassifiedAsHeldForSale",
+"TotalCurrentLiabilities",
+"OtherLiabilitiesCurrent",
+"LiabilitiesCurrentAndDeferredRentCurrentAndDeferredRevenueCurrent",
+"LiabilitiesCurrentIncludingDeferredIncomeTaxLiabilitiesNet",
+"TotalCurrentLiabilities1",
+"DebtCurrent",
+"LiabilitiesCurrent",
+"CurrentLiabilities",
+"Liabilities",
+	    "OtherCurrentLiabilities",
+	    "LiabilitiesIncludingDeferredIncomeTaxes"
+	]
+    },
+    {
+        "keytag": "18",
+        "tags": [
+"EBITDA",
+"Ebitda",
+	    "ebitda",
+"EarningsBeforeInterestTaxesDepreciationAndAmortization",
+"EarningsBeforeInterestTaxesDepreciationAndAmortizationEbitda"
+	]
+    },
+
+        {
+        "keytag": "80",
+        "tags": [
+"Dividends",
+"DividendsPaid",
+"DividendsCash",
+	    "DividendsRecognisedAsDistributionsToOwnersOfParent",
+	    "PaymentsOfDividends",
+	    "PaymentsOfDividendsCommonStock",
+	    "PaymentsOfDividendsPreferredStock",
+	    "PaymentsOfDividendsCommonAndPreferredStock",
+	    "InterimDividend",
+	    "ComplementaryDividend",
+	    "CurrentDividendPayables",
+	    "DividendDistributions",
+	    "DividendsAndReturnOnOtherEquityInstrumentsPaid",
+	    "DividendsProposedOrDeclaredBeforeFinancialStatementsAuthorisedForIssueButNotRecognisedAsDistributionToOwners",
+	    "DividendsRecognisedAsDistributionsToOwnersOfParentRelatingToCurrentYear",
+	    "DividendsRecognisedAsDistributionsToOwnersOfParentRelatingToPriorYears",
+	    "DividendsToRelatedParty",
+	    "GezahlteDividende",
+	    "GezahlteDividenden",
+	    "GezahlteDividendenAnAndereGesellschafter",
+	    "Interimdividend",
+	    "InterimDividend",
+	    "InterimDividendMovement",
+	    "InterimDividendPaid",
+	    "InterimDividends",
+	    "OrdinaryShareDividends",
+"ProposedDividendRecognisedInEquity"
+	    	]
+    },
+
+    {
+        "keytag": "9",
+        "tags": [
+            "EBIT",
+	    "OperatingIncomeLoss",
+            "EarningsBeforeTaxesAndInterests",
+            "ProfitLoss",
+"EarningsBeforeInterestAndTaxes",
+"EarningsBeforeInterestAndTaxesEBIT",
+            "Earnings",
+	    "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+            "ProfitLossFromOperatingActivities",
+            "ProfitLossAttributableToOwnersOfParent",
+            "ProfitLossExcludingRedeemableNoncontrollingInterests",
+            "ProfitLossExcludingNetIncomeLossAttributableToRedeemableNoncontrollingInterests",
+            "IncomeLossFromOperationsBeforeExtraordinaryItemsPerBasicAndDilutedShare",
+            "ProfitLossLessPreferredDistributions",
+            "ProfitLossLessMinorityInterestInNetIncomeLossOperatingPartnerships",
+            "ProfitLossExcludingGainsLossesOfRedeemableNoncontrollingInterestsInPartiallyOwnedConsolidatedSubsidiaries",
+            "ProfitLossExcludingPortionAttributableToRedeemableNoncontrollingInterest",
+            "IncomeLossFromContinuingOperationsBeforeIncomeTaxesAndRedeemableNonControllingInterest",
+            "IncomeLossBeforeExtraordinaryItemsAndCumulativeEffectOfChangeInAccountingPrinciple",
+            "ProfitLossExcludingRedeemableNoncontrollingInterest",
+            "ProfitLossPermanentAndTemporaryEquities",
+            "ProfitLossFromContinuingOperations",
+            "ProfitLossExcludingNetIncomeLossAttributableToRedeemableNoncontrollingInterest"
+        ]
+    },
+
+
+
+
+
+    
+    {
+        "keytag": "81",
+        "tags": [
+	    "CashFlowsFromUsedInFinancingActivities"	    ,
+            "Cashtofrominvesting",
+            "CashFlowsFromUsedInFinancingActivities",
+            "CashFlowsFromUsedInFinancing",
+            "NetCashProvidedByUsedInFinancingActivities"
+	]
+    },
+    {
+        "keytag": "33",
+        "tags": [
+	    "CashFlowsFromUsedInInvestingActivities"	    ,
+            "Cashtofrominvesting",
+            "CashFlowsFromUsedInInvestingActivities",
+            "CashFlowsFromUsedInInvesting",
+            "NetCashProvidedByUsedInInvestingActivities"
+	]
+    },
+    {
+        "keytag": "71",
+        "tags": [
+            "Cashtofromoperations",
+            "CashFlowsFromUsedInOperatingActivities",
+            "CashFlowsFromUsedInOperations",
+            "NetCashProvidedByUsedInOperatingActivities"
+        ]
+    },
+    {
+        "keytag": "16",
+        "tags": [
+            "Equity",
+            "EquityAttributableToOwnersOfParent",
+            "StockholdersEquity",
+            "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+            "EquityRestated",
+            "EquityRestatedAtEndOfPeriod",
+            "OwnersCapital",
+            "TotalCommonEquity",
+            "EquityIncludingOtherEquityInstruments",
+            "TotalEquity",
+            "StockholderEquity",
+            "RestatedEquity",
+            "StockholdersEquityTotal",
+	    	    "StockholdersEquityExcludingPortionAttributableToNoncontrollingInterest"
+
+        ]
+    },
+    {
+        "keytag": "20",
+        "tags": [
+            "Assets",
+            "EquityAndLiabilities",
+            "Totalassets"
+        ]
+    },
+    {
+        "keytag": "73",
+        "tags": [
+            "Cash",
+            "CashAndCashEquivalents",
+            "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "CashAndCashEquivalentsAtCarryingValue",
+            "CashAndBankBalancesAtCentralBanks",
+            "CashCashEquivalentsAndRestricedCash",
+            "CaissesEtBanquesCentrales",
+            "CashEquivalentsAtCarryingValue",
+            "CashAndCashEquivalents",
+            "CashAndCashEquivalentsAtCarryingValue",
+            "RestrictedCashAndCashEquivalents",
+	    	    "CashAndDueFromBanks",
+            "CashCashEquivalentsAndShortTermInvestments",
+            "RestrictedCashAndCashEquivalentsAtCarryingValue",
+            "CashAndCashEquivalentsFairValueDisclosure"
+        ]
+    },
+    {
+        "keytag": "19",
+        "tags": [
+            "Shares",
+	    "WeightedAverageNumberOfDilutedSharesOutstanding",
+	    "WeightedAverageNumberOfSharesOutstandingBasic",
+            "WeightedAverageNumberOfShareOutstandingBasicAndDiluted",
+            "NumberOFSharesIssued",
+            "SharesOutstanding",
+            "NumberOfSharesOutstanding",
+            "AverageNumberOfSharesDiluted",
+            "WeightedAverageShares",
+            "AdjustedWeightedAverageShares",
+	    "CommonStockSharesOutstanding",
+            "NumberOfSharesDiluted",
+            "CommonStockSharesAuthorized",
+            "CommonStockSharesIssued",
+            "CommonStockSharesOutstanding",
+            "EntityCommonStockSharesOutstanding"
+        ]
+    },
+    {
+        "keytag": "1",
+        "tags": [
+            "EPS",
+            "EarningsPerShareBasic",
+	    "IncomeLossFromContinuingOperationsPerBasicShare",
+	    "IncomeLossFromContinuingOperationsPerDilutedShare",
+            "EarningsPerShareBasicAndDiluted",
+            "EarningsPerShareDiluted",
+            "BasicEarningsLossPerShare",
+            "DilutedEarningsLossPerShare",
+            "BasicAndDilutedEarningsLossPerShare",
+            "BasicEarningsLossPerShareFromContinuingOperations",
+            "BasicAndDilutedEarningsLossPerShareFromContinuingOperations",
+            "BasicAndDilutedEarningsLossPerShareAttributableToOwnersOfParent",
+            "DilutedEarningsLossPerShareFromContinuingOperations"
+        ]
+    },
+    {
+        "keytag": "83",
+        "tags": [
+            "ComprehensiveIncome",
+            "ComprehensiveIncomeNetOfTax"
+        ]
+    },
+    {
+        "keytag": "84",
+        "tags": [
+            "ComprehensiveIncomeAttributableToOwnersOfParent"
+        ]
+    },
+    {
+        "keytag": "82",
+        "tags": [
+            "ComprehensiveIncomeAttributableToNoncontrollingInterests"
+        ]
+    },
+    {
+        "keytag": "85",
+        "tags": [
+            "TreasuryShares"
+        ]
+    },
+
+    {
+        "keytag": "86",
+        "tags": [
+            "SharePrice",
+            "PerSharePrice",
+            "SharesIssuedPricePerShare",
+            "SharesIssuedPricePerShare1",
+            "SharesOutstandingPricePerShare",
+            "CashPricePerOrdinaryShare",
+            "CompanysNasdaqSharePricePerShare",
+            "Publicfloatshareprice",
+            "PublicFloatStockPrice",
+            "SaleOfStockPricePerShare",
+            "TreasuryStockAveragePrice",
+            "TreasuryStockAveragePricePerShare",
+            "CommonStockParOrStatedValuePerShare"
+        ]
+    },
+
+
+
+    {
+        "keytag": "87",
+        "tags": [
+            "StockValue",
+            "CommonAndPreferredStockValue",
+            "PreferredAndCommonStockValue",
+            "CommonStockValue",
+            "PreferredStockValue"
+        ]
+    }
+    
+]
