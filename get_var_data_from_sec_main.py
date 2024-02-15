@@ -26,7 +26,7 @@ _QUARTERS = ["Q1", "Q2", "Q3", "Q4"]
 _NO_SUCH_KEY_STR = "NoSuchKey"
 
 _INCOME_URL_TEMPLATE = (
-    "https://data.sec.gov/api/xbrl/frames/us-gaap/{tag}/USD/CY{year}{quarter}I.json"
+    "https://data.sec.gov/api/xbrl/frames/us-gaap/{tag}/USD/CY{year}{quarter}.json"
 )
 _REVENUE_URL_TEMPLATE = (
     "https://data.sec.gov/api/xbrl/frames/us-gaap/{tag}/USD/CY{year}{quarter}.json"
