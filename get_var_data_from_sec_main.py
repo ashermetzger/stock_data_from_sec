@@ -1,4 +1,8 @@
-"""Getting different var data from SEC frames API."""
+"""Getting different var data from SEC frames API.
+
+To run:
+python3 get_var_data_from_sec_main.py --variable=<variable1> --variable=<variable2> --user_agent=<email etc>
+"""
 
 import os
 import glob
@@ -79,7 +83,7 @@ def main(_):
         tags = tags_by_var[var]
         all_combinations.extend(itertools.product([var], tags, years, _QUARTERS))
     
-    for var, tag, year, quarter in all_combinations:
+    for var, tag, year, quarter in tqdm.tqdm(all_combinations):
         identifier = f'{var}_{tag}_{year}_{quarter}'
         if identifier in already_seen:
             logging.info('%s already process.', identifier)
