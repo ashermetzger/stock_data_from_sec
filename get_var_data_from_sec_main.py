@@ -67,8 +67,8 @@ def main(_):
     header = {"User-Agent": _USER_AGENT_FLAG.value}
     with open("tags_by_var.json") as f:
         tags_by_var = json.load(f)
-    if os.path.exists('already_seen.txt'):
-        with open("already_seen.txt", 'rt') as f:
+    if os.path.exists("already_seen.txt"):
+        with open("already_seen.txt", "rt") as f:
             already_seen = f.read()
             already_seen = already_seen.splitlines()  # Split by newlines
             already_seen = set(already_seen)
@@ -77,16 +77,16 @@ def main(_):
 
     years = range(_YEAR_START, _YEAR_END)
     no_such_tags = set()
-    
+
     all_combinations = []
     for var in _VARS_FLAG.value:
         tags = tags_by_var[var]
         all_combinations.extend(itertools.product([var], tags, years, _QUARTERS))
-    
+
     for var, tag, year, quarter in tqdm.tqdm(all_combinations):
-        identifier = f'{var}_{tag}_{year}_{quarter}'
+        identifier = f"{var}_{tag}_{year}_{quarter}"
         if identifier in already_seen:
-            logging.info('%s already process.', identifier)
+            logging.info("%s already process.", identifier)
             continue
         tag_dir = f"variables/{var}/{tag}/"
         if not os.path.exists(tag_dir):
@@ -104,9 +104,7 @@ def main(_):
                 f.write("\n".join(sorted(already_seen)))
             raise e
         if response_json == _NO_SUCH_KEY_STR:
-            logging.info(
-                "Response was unsuccessful for %s", identifier
-            )
+            logging.info("Response was unsuccessful for %s", identifier)
             no_such_tags.add(identifier)
             continue
         already_seen.add(identifier)
@@ -116,6 +114,7 @@ def main(_):
     no_such_tags = sorted(no_such_tags)
     with open("no_such_tags.txt", mode="wt", encoding="utf-8") as f:
         f.write("\n".join(no_such_tags))
+    logging.info("Run finished successfully.")
 
 
 if __name__ == "__main__":
