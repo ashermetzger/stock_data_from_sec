@@ -9,6 +9,7 @@ import glob
 import json
 
 from absl import app
+from absl import flags
 from absl import logging
 import pandas as pd
 import tqdm
@@ -16,17 +17,25 @@ import tqdm
 import utils
 
 
-_VARS_DIR = "variables/"
-_VARS = os.listdir(_VARS_DIR)
+_RAW_DIR = "raw_data/"
+
+
+_TEMPORAL_RESOLUTION_FLAG = flags.DEFINE_enum(
+    "temporal_resolution",
+    None,
+    ["annual", "quarterly"],
+    "Fetch annual or quarterly data.",
+)
 
 
 def main(_):
-
+    temp_res = _TEMPORAL_RESOLUTION_FLAG.value
     ticker_by_cik = utils.load_ticker_by_cik()
 
     dfs_by_var = collections.defaultdict(list)
-    for var in _VARS:
-        var_dir = os.path.join(_VARS_DIR, var)
+    vars = os.listdir(os.path.join(_RAW_DIR, temp_res))
+    for var in vars:
+        var_dir = os.path.join(_RAW_DIR, _TEMPORAL_RESOLUTION_FLAG.value, var)
         tag_dir_names = sorted(os.listdir(var_dir))
         for tag_dir_name in tqdm.tqdm(tag_dir_names):
             tag_dir = os.path.join(var_dir, tag_dir_name)
@@ -51,7 +60,7 @@ def main(_):
         logging.info("Length df before droping dups: %s", len(df))
         df = df.drop_duplicates(subset=["ccp", "cik", "val"])
         logging.info("Length df before droping dups: %s", len(df))
-        with open(f"{var.lower()}.parquet", "wb") as f:
+        with open(f"{var.lower()}_{temp_res}.parquet", "wb") as f:
             df.to_parquet(f)
 
 
