@@ -1,4 +1,5 @@
 /old
-/variables
+/raw_data
 .vscode/
-no_such_tags.txt
+already_seen.txt
+/test
