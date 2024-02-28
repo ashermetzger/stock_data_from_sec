@@ -3,6 +3,7 @@
 To run:
 python3 get_var_data_from_sec_main.py --variable=<variable1> --variable=<variable2> --user_agent=<email etc>
 """
+
 from absl import app
 from absl import flags
 from absl import logging
@@ -10,9 +11,6 @@ import tqdm
 
 import get_var_data_from_sec
 
-
-_YEAR_START = 2010
-_YEAR_END = 2025
 _QUARTERS = ["Q1", "Q2", "Q3", "Q4"]
 _ANNUAL = get_var_data_from_sec.ANNUAL
 _QUARTERLY = get_var_data_from_sec.QUARTERLY
@@ -30,10 +28,13 @@ _USER_AGENT_FLAG = flags.DEFINE_string(
 _TEMP_RES_FLAG = flags.DEFINE_enum(
     "temp_res", None, [_ANNUAL, _QUARTERLY], "Fetch annual or quarterly data."
 )
-
 _IS_TEST_RUN = flags.DEFINE_bool(
     "is_test_run", False, "Run on limited data and save to tmp dir."
 )
+_START_YEAR = flags.DEFINE_integer(
+    "start_year", 2010, "From which year to start fetching data."
+)
+_END_YEAR = flags.DEFINE_integer("end_year", 2024, "Until which year to fetch data.")
 
 
 def _create_header():
@@ -46,7 +47,7 @@ def main(_):
     kwargs = {
         "vars": _VARS_FLAG.value,
         "header": _create_header(),
-        "years": range(_YEAR_START, _YEAR_END),
+        "years": range(_START_YEAR.value, _END_YEAR.value),
     }
     if temp_res == _QUARTERLY:
         kwargs.update({"quarters": _QUARTERS})
@@ -56,13 +57,16 @@ def main(_):
     else:
         raise ValueError("Unsupported temp res: %s", temp_res)
 
-    all_combinations = get_files_from_sec.create_combinations()
+    combinations = get_files_from_sec.create_combinations()
     if _IS_TEST_RUN.value:
-        hops = len(all_combinations) // 20
-        all_combinations = all_combinations[::hops]
+        hops = len(combinations) // 20
+        combinations = combinations[::hops]
 
-    for combination in tqdm.tqdm(all_combinations):
+    for combination in tqdm.tqdm(combinations):
         url = get_files_from_sec.create_url(combination)
+        if url in get_var_data_from_sec.ALREADY_SEEN:
+            logging.info("Already seen: %s.", url)
+            continue
         response_json = get_files_from_sec.get_json_from_sec_by_params(url)
         if response_json == get_var_data_from_sec.NO_SUCH_KEY_STR:
             _NO_SUCH_TAGS.add(url)

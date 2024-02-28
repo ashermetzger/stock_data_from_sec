@@ -11,6 +11,8 @@ from absl import logging
 import itertools
 import pandas as pd
 
+import utils
+
 NO_SUCH_KEY_STR = "NoSuchKey"
 
 _QUARTERLY_URL_TEMPLATE = (
@@ -40,26 +42,6 @@ def edgar_query(url: str, header: dict) -> pd.DataFrame:
     return response_json
 
 
-def _get_tags_by_var():
-    with open("tags_by_var.json") as f:
-        tags_by_var = json.load(f)
-    return tags_by_var
-
-
-def already_seen_files():
-    if os.path.exists("already_seen.txt"):
-        with open("already_seen.txt", "rt") as f:
-            already_seen = f.read()
-            already_seen = already_seen.splitlines()  # Split by newlines
-            already_seen = set(already_seen)
-    else:
-        already_seen = set()
-    return already_seen
-
-
-ALREADY_SEEN = already_seen_files()
-
-
 def get_json_from_sec(url: str, header: dict[str, str]):
     try:
         response_json = edgar_query(url, header=header)
@@ -71,9 +53,7 @@ def get_json_from_sec(url: str, header: dict[str, str]):
     return response_json
 
 
-def get_json_from_sec_by_url(url: str, header: dict[str, str]):
-    if url in ALREADY_SEEN:
-        return None
+def get_json_from_sec_by_url(url: str, header: dict[str, str]) -> dict:
     json_response = get_json_from_sec(url, header)
     return json_response
 
@@ -126,7 +106,7 @@ class GetAnnualFilesFromSec(GetFilesFromSec):
         self._url_template = _ANNUAL_URL_TEMPLATE
 
     def create_combinations(self):
-        tags_by_var = _get_tags_by_var()
+        tags_by_var = utils.get_tags_by_var()
         tags_by_var = {
             var: tag for var, tag in tags_by_var.items() if var in self._vars
         }
@@ -161,7 +141,7 @@ class GetQuarterlyFilesFromSec(GetFilesFromSec):
         self._url_template = _QUARTERLY_URL_TEMPLATE
 
     def create_combinations(self):
-        tags_by_var = _get_tags_by_var()
+        tags_by_var = utils.get_tags_by_var()
         tags_by_var = {
             var: tag for var, tag in tags_by_var.items() if var in self._vars
         }
@@ -180,7 +160,7 @@ class GetQuarterlyFilesFromSec(GetFilesFromSec):
             tag=combination.tag, year=combination.year, quarter=combination.quarter
         )
 
-    def get_json_from_sec_by_params(self, url: str):
+    def get_json_from_sec_by_params(self, url: str) -> dict:
         return get_json_from_sec_by_url(url, self._header)
 
     def create_file_path(self, tag_dir: str, combination: tuple) -> str:
@@ -188,3 +168,17 @@ class GetQuarterlyFilesFromSec(GetFilesFromSec):
             tag_dir, f"{combination.year}_{combination.quarter}.json"
         )
         return file_path
+
+
+def already_seen_files():
+    if os.path.exists("already_seen.txt"):
+        with open("already_seen.txt", "rt") as f:
+            already_seen = f.read()
+            already_seen = already_seen.splitlines()  # Split by newlines
+            already_seen = set(already_seen)
+    else:
+        already_seen = set()
+    return already_seen
+
+
+ALREADY_SEEN = already_seen_files()
