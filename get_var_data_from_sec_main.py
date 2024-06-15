@@ -2,7 +2,11 @@
 
 To run:
 python3 get_var_data_from_sec_main.py --variable=<variable1> --variable=<variable2> --user_agent=<email etc>
+e.g. (both variables form 2000 onwards):
+python3 get_var_data_from_sec_main.py --variable=Revenue --variable=NetProfit --start_year=2000 --user_agent=ashermetzger.usa@gmail.com --temp_res=quarterly
 """
+
+import requests_cache
 
 from absl import app
 from absl import flags
@@ -43,11 +47,12 @@ def _create_header():
 
 def main(_):
     temp_res = _TEMP_RES_FLAG.value
-
+    
     kwargs = {
         "vars": _VARS_FLAG.value,
         "header": _create_header(),
-        "years": range(_START_YEAR.value, _END_YEAR.value),
+        "session": requests_cache.CachedSession('sec_cache'),
+        "years": range(_START_YEAR.value, _END_YEAR.value + 1),
     }
     if temp_res == _QUARTERLY:
         kwargs.update({"quarters": _QUARTERS})
@@ -67,7 +72,7 @@ def main(_):
         if url in get_var_data_from_sec.ALREADY_SEEN:
             logging.info("Already seen: %s.", url)
             continue
-        response_json = get_files_from_sec.get_json_from_sec_by_params(url)
+        response_json = get_files_from_sec.get_json_from_sec_by_url(url)
         if response_json == get_var_data_from_sec.NO_SUCH_KEY_STR:
             _NO_SUCH_TAGS.add(url)
             get_var_data_from_sec.ALREADY_SEEN.add(url)

@@ -1,6 +1,9 @@
 """Processing raw frame SEC jsons.
 
 Aggregate all different revenues into a unified file for each company.
+
+Example:
+python3 process_raw_jsons_main.py --temporal_resolution=quarterly
 """
 
 import os
@@ -34,10 +37,11 @@ def main(_):
     tags_by_var = utils.get_tags_by_var()
 
     dfs_by_var = collections.defaultdict(list)
-    vars = os.listdir(os.path.join(_RAW_DIR, temp_res))
+    raw_temp_res = "quarterly" if temp_res == "ttm" else temp_res
+    vars = os.listdir(os.path.join(_RAW_DIR, raw_temp_res))
     for var in vars:
         tags = tags_by_var[var]
-        var_dir = os.path.join(_RAW_DIR, _TEMPORAL_RESOLUTION_FLAG.value, var)
+        var_dir = os.path.join(_RAW_DIR, raw_temp_res, var)
         tag_dir_names = sorted(os.listdir(var_dir))
         tag_dir_names = [
             tag_dir_name for tag_dir_name in tag_dir_names if tag_dir_name in tags
@@ -69,18 +73,22 @@ def main(_):
 
         df_dups = df[df.duplicated(subset=["ticker", "ccp"], keep=False)]
         df = df[~df.duplicated(subset=["ticker", "ccp"], keep=False)]
-        df['tag_rank'] = 1
+        df["tag_rank"] = 1
         sorterIndex = dict(zip(tags, range(len(tags))))
         df_dups.loc[:, "tag_rank"] = df_dups["tag"].map(sorterIndex)
-        df_dups = df_dups.groupby(["ticker", "ccp"]).apply(
-            lambda x: x.sort_values(by="tag_rank").iloc[0]
-        ).reset_index(drop=True)
+        df_dups = (
+            df_dups.groupby(["ticker", "ccp"])
+            .apply(lambda x: x.sort_values(by="tag_rank").iloc[0])
+            .reset_index(drop=True)
+        )
         df = pd.concat([df, df_dups])
         df = df.sort_values(["ticker", "ccp", "tag"])
 
         logging.info("Length df after handling dups: %s", len(df))
-        with open(f"{var.lower()}_{temp_res}.parquet", "wb") as f:
+        file_name = f"{var.lower()}_{temp_res}.parquet"
+        with open(file_name, "wb") as f:
             df.to_parquet(f)
+        logging.info("Successfuly wrote %s.", file_name)
 
 
 if __name__ == "__main__":

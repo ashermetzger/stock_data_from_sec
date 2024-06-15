@@ -5,6 +5,7 @@ from collections import namedtuple
 import json
 import os
 import requests
+import requests_cache
 import time
 
 from absl import logging
@@ -25,39 +26,6 @@ QUARTERLY = "quarterly"
 ANNUAL = "annual"
 
 
-def edgar_query(url: str, header: dict) -> pd.DataFrame:
-    try:
-        logging.info("Attempting to fetch %s.", url)
-        response = requests.get(url, headers=header)
-        time.sleep(0.1)
-        response.raise_for_status()
-    except requests.exceptions.HTTPError as e:
-        if NO_SUCH_KEY_STR in e.response.content.decode():
-            logging.info("Response is not successful: NoSuchKey for %s", url)
-            return NO_SUCH_KEY_STR
-        else:
-            raise e
-
-    response_json = response.json()
-    return response_json
-
-
-def get_json_from_sec(url: str, header: dict[str, str]):
-    try:
-        response_json = edgar_query(url, header=header)
-    except Exception as e:
-        logging.info("Write already seen urls.")
-        with open("already_seen.txt", mode="wt") as f:
-            f.write("\n".join(sorted(ALREADY_SEEN)))
-        raise e
-    return response_json
-
-
-def get_json_from_sec_by_url(url: str, header: dict[str, str]) -> dict:
-    json_response = get_json_from_sec(url, header)
-    return json_response
-
-
 def create_tag_dir(temp_res: str, var: str, tag: str, is_test_run: bool = False) -> str:
     tag_dir = f"raw_data/{temp_res}/{var}/{tag}/"
     print(tag_dir)
@@ -75,9 +43,15 @@ def save_json(response_json: dict, file_path: str):
 
 class GetFilesFromSec:
 
-    def __init__(self, vars: list[str], header: dict[str, str]) -> None:
+    def __init__(
+        self,
+        vars: list[str],
+        header: dict[str, str],
+        session: requests_cache.session.CachedSession,
+    ) -> None:
         self._vars = vars
         self._header = header
+        self._session = session
 
     @abc.abstractmethod
     def create_combinations(self):
@@ -95,13 +69,43 @@ class GetFilesFromSec:
     def create_file_path(tag_dir: str, combination: tuple) -> str:
         raise NotImplementedError
 
+    def get_json_from_sec_by_url(self, url: str):
+        try:
+            response_json = self.edgar_query(url)
+        except Exception as e:
+            logging.info("Write already seen urls.")
+            with open("already_seen.txt", mode="wt") as f:
+                f.write("\n".join(sorted(ALREADY_SEEN)))
+            raise e
+        return response_json
+
+    def edgar_query(self, url: str) -> pd.DataFrame:
+        try:
+            logging.info("Attempting to fetch %s.", url)
+            response = self._session.get(url, headers=self._header)
+            time.sleep(0.1)
+            response.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            if NO_SUCH_KEY_STR in e.response.content.decode():
+                logging.info("Response is not successful: NoSuchKey for %s", url)
+                return NO_SUCH_KEY_STR
+            else:
+                raise e
+
+        response_json = response.json()
+        return response_json
+
 
 class GetAnnualFilesFromSec(GetFilesFromSec):
 
     def __init__(
-        self, vars: list[str], header: dict[str, str], years: list[int]
+        self,
+        vars: list[str],
+        header: dict,
+        session: requests_cache.session.CachedSession,
+        years: list[int],
     ) -> None:
-        super().__init__(vars, header)
+        super().__init__(vars, header, session)
         self._years = years
         self._url_template = _ANNUAL_URL_TEMPLATE
 
@@ -122,9 +126,6 @@ class GetAnnualFilesFromSec(GetFilesFromSec):
         url = self._url_template.format(tag=combination.tag, year=combination.year)
         return url
 
-    def get_json_from_sec_by_params(self, url: str) -> dict:
-        return get_json_from_sec_by_url(url, self._header)
-
     def create_file_path(self, tag_dir: str, combination: tuple) -> str:
         file_path = os.path.join(tag_dir, f"{combination.year}.json")
         return file_path
@@ -133,9 +134,14 @@ class GetAnnualFilesFromSec(GetFilesFromSec):
 class GetQuarterlyFilesFromSec(GetFilesFromSec):
 
     def __init__(
-        self, vars: list[str], header: dict, years: list[int], quarters: list[str]
+        self,
+        vars: list[str],
+        header: dict,
+        session: requests_cache.session.CachedSession,
+        years: list[int],
+        quarters: list[str],
     ) -> None:
-        super().__init__(vars, header)
+        super().__init__(vars, header, session)
         self._years = years
         self._quarters = quarters
         self._url_template = _QUARTERLY_URL_TEMPLATE
@@ -159,9 +165,6 @@ class GetQuarterlyFilesFromSec(GetFilesFromSec):
         return self._url_template.format(
             tag=combination.tag, year=combination.year, quarter=combination.quarter
         )
-
-    def get_json_from_sec_by_params(self, url: str) -> dict:
-        return get_json_from_sec_by_url(url, self._header)
 
     def create_file_path(self, tag_dir: str, combination: tuple) -> str:
         file_path = os.path.join(
