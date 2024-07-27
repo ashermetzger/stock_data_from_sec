@@ -107,7 +107,6 @@ https://data.sec.gov/api/xbrl/frames/us-gaap/NetIncomeLoss/USD/CY2002Q2.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/NetIncomeLoss/USD/CY2003Q1.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/NetIncomeLoss/USD/CY2004Q1.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/NetIncomeLoss/USD/CY2005Q1.json
-https://data.sec.gov/api/xbrl/frames/us-gaap/NetIncomeLoss/USD/CY2024Q2.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/NetIncomeLoss/USD/CY2024Q3.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/NetIncomeLoss/USD/CY2024Q4.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/NetProfit/USD/CY2000Q1.json
@@ -435,7 +434,6 @@ https://data.sec.gov/api/xbrl/frames/us-gaap/ProfitLoss/USD/CY2006Q1.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/ProfitLoss/USD/CY2006Q2.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/ProfitLoss/USD/CY2006Q3.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/ProfitLoss/USD/CY2007Q1.json
-https://data.sec.gov/api/xbrl/frames/us-gaap/ProfitLoss/USD/CY2024Q2.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/ProfitLoss/USD/CY2024Q3.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/ProfitLoss/USD/CY2024Q4.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/ProfitLossFromContinuingOperations/USD/CY2000Q1.json
@@ -697,7 +695,6 @@ https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerExcl
 https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/USD/CY2014Q2.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/USD/CY2014Q3.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/USD/CY2014Q4.json
-https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/USD/CY2024Q2.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/USD/CY2024Q3.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerExcludingAssessedTax/USD/CY2024Q4.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerIncludingAssessedTax/USD/CY2000Q1.json
@@ -761,7 +758,6 @@ https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerIncl
 https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerIncludingAssessedTax/USD/CY2014Q3.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerIncludingAssessedTax/USD/CY2014Q4.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerIncludingAssessedTax/USD/CY2015Q1.json
-https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerIncludingAssessedTax/USD/CY2024Q2.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerIncludingAssessedTax/USD/CY2024Q3.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractWithCustomerIncludingAssessedTax/USD/CY2024Q4.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/RevenueFromContractsWithCustomers/USD/CY2000Q1.json
@@ -894,7 +890,6 @@ https://data.sec.gov/api/xbrl/frames/us-gaap/Revenues/USD/CY2006Q3.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/Revenues/USD/CY2006Q4.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/Revenues/USD/CY2007Q1.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/Revenues/USD/CY2007Q2.json
-https://data.sec.gov/api/xbrl/frames/us-gaap/Revenues/USD/CY2024Q2.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/Revenues/USD/CY2024Q3.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/Revenues/USD/CY2024Q4.json
 https://data.sec.gov/api/xbrl/frames/us-gaap/Sales/USD/CY2000Q1.json

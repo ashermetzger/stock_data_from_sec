@@ -64,30 +64,34 @@ def main(_):
 
     # Aggregate all dfs to one large one.
     for var, dfs in dfs_by_var.items():
-        tags = tags_by_var[var]
         df = pd.concat(dfs)
+        # Sort by ticker quarter and tag.
         df = df.sort_values(["ticker", "ccp", "tag"])
         logging.info("Length df before droping dups: %s", len(df))
+        # if same value exists for same ticker, quarter then drop.
         df = df.drop_duplicates(subset=["ccp", "cik", "val"])
         logging.info("Length df after dropping same value dups: %s", len(df))
-
-        df_dups = df[df.duplicated(subset=["ticker", "ccp"], keep=False)]
-        df = df[~df.duplicated(subset=["ticker", "ccp"], keep=False)]
-        df["tag_rank"] = 1
+        df_dups = df[df.duplicated(subset=["ticker", "ccp"], keep=False)].copy()
+        df_no_dups = df[~df.duplicated(subset=["ticker", "ccp"], keep=False)].copy()
+        df_no_dups.loc[:, "tag_rank"] = 0
+        # from tag to order tag.
+        tags = tags_by_var[var]
         sorterIndex = dict(zip(tags, range(len(tags))))
         df_dups.loc[:, "tag_rank"] = df_dups["tag"].map(sorterIndex)
+        # Keeps only the highest order tag (lowest number).
         df_dups = (
-            df_dups.groupby(["ticker", "ccp"])
-            .apply(lambda x: x.sort_values(by="tag_rank").iloc[0])
-            .reset_index(drop=True)
-        )
-        df = pd.concat([df, df_dups])
-        df = df.sort_values(["ticker", "ccp", "tag"])
+            df_dups.groupby(["ticker", "ccp"], as_index=False).apply(
+                lambda x: x.sort_values(by="tag_rank").iloc[0], include_groups=False
+            ),
+        )[0]
+        # Adds back the df that had no dups.
+        final_df = pd.concat([df_no_dups, df_dups])
+        final_df = final_df.sort_values(["ticker", "ccp", "tag"])
 
-        logging.info("Length df after handling dups: %s", len(df))
+        logging.info("Length df after handling dups: %s", len(final_df))
         file_name = f"{var.lower()}_{temp_res}.parquet"
         with open(file_name, "wb") as f:
-            df.to_parquet(f)
+            final_df.to_parquet(f)
         logging.info("Successfuly wrote %s.", file_name)
 
 
