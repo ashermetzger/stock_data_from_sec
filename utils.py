@@ -2,12 +2,7 @@
 
 import json
 
-from absl import logging
-import pandas as pd
-
-# Ticker file is from here:
-# https://www.sec.gov/files/company_tickers.json
-_TICKER_FILE = "company_tickers_2024_06_15.json"
+import constants
 
 
 def load_cik_by_ticker():
@@ -25,15 +20,14 @@ def load_ticker_by_cik():
 
 
 def _read_ticker_file() -> list[dict]:
-    with open(_TICKER_FILE, "rt") as f:
+    with open(constants.TICKER_FILE, "rt") as f:
         ticker_data = json.load(f)
-    tickers = []
     entries = [entry for _, entry in ticker_data.items()]
     return entries
 
 
 def get_tags_by_var():
     # NOTE: The order of the tags in the file is important! The first one gets precedence.
-    with open("tags_by_var.json") as f:
+    with open(constants.TAGS_BY_VAR, "rt") as f:
         tags_by_var = json.load(f)
     return tags_by_var
